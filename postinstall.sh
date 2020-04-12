@@ -5,7 +5,7 @@
 first_lock="/var/lib/dpkg/lock-frontend"
 second_lock="/var/cache/apt/archives/lock"
 
-dowloads_dir="/home/$USER/Downloads/programs"
+dowloads_dir="$HOME/Downloads/programs"
 
 url_google_chrome="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 url_node="https://deb.nodesource.com/setup_12.x"
@@ -71,7 +71,7 @@ mkdir "$dowloads_dir"
 ##---------- Installing google chrome ----------##
 
 ## getting chrome.deb
-wget -c "$url_google_chrome" -p "$dowloads_dir"
+wget -c "$url_google_chrome" -P "$dowloads_dir"
 
 ## installing chrome
 sudo dpkg -i $dowloads_dir/*.deb
@@ -111,7 +111,7 @@ done
 ##---------- Installing snap apps ----------##
 
 for program in ${snap_programs[@]}; do
-    if [ "$program" = "code" -o "$program" = "insomnia"]; then
+    if [ "$program" = "code" -o "$program" = "insomnia" -o "$program" = "pycharm-community" ]; then
         sudo snap install "$program" --classic
     else
         sudo snap install "$program"
