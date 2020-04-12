@@ -54,7 +54,7 @@ fi
 
 echo "Updating repositories..."
 
-if ! apt-get update; then
+if ! sudo apt-get update; then
     echo "Coudn't update. 
 Check your file /etc/apt/sources.list or run this file as root"
     exit 1   
@@ -111,7 +111,7 @@ done
 ##---------- Installing snap apps ----------##
 
 for program in ${snap_programs[@]}; do
-    if [ "$program" = "code" ]; then
+    if [ "$program" = "code" -o "$program" = "insomnia"]; then
         sudo snap install "$program" --classic
     else
         sudo snap install "$program"
