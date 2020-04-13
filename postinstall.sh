@@ -26,6 +26,7 @@ apt_programs=(
     gnome-tweaks
     git
     curl
+    snapd
     nodejs
     yarn
     apache2
