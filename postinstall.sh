@@ -8,6 +8,8 @@ second_lock="/var/cache/apt/archives/lock"
 dowloads_dir="$HOME/Downloads/programs"
 
 url_google_chrome="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+url_stacer="https://github.com/oguzhaninan/Stacer/releases/download/v1.1.0/stacer_1.1.0_amd64.deb"
+
 url_node="https://deb.nodesource.com/setup_12.x"
 urls_yarn=(
     "https://dl.yarnpkg.com/debian/pubkey.gpg"
@@ -73,8 +75,9 @@ mkdir "$dowloads_dir"
 
 ## getting chrome.deb
 wget -c "$url_google_chrome" -P "$dowloads_dir"
+wget -c "$url_stacer" -P "$downloads_dir"
 
-## installing chrome
+## installing chrome and stacer
 sudo dpkg -i $dowloads_dir/*.deb
 
 
