@@ -26,11 +26,8 @@ snap_programs=(
 
 apt_programs=(
     gnome-tweaks
-    git
-    curl
     snapd
     nodejs
-    yarn
     apache2
     mysql-server
     php
